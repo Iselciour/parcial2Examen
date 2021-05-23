@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="parcial2Examen.Views.Mapp"
+             Title="Map Gas Station">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1" />
+            </Grid.RowDefinitions>
+            <maps:Map
+                x:Name="GasMapp"
+                Grid.RowSpan="3" 
+                Margin="20"/>
+            <BoxView
+                Grid.Row="1"
+                HeightRequest="400" />
+            <StackLayout
+                Padding="20"
+                Grid.Row="2">
+                <BoxView 
+                    BackgroundColor="#957BB0" 
+                    HeightRequest="6" 
+                    HorizontalOptions="Fill"/>
+                <Label
+                    x:Name="GasEstablishment"
+                    FontFamily= "Century Gothic"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    TextTransform="Uppercase"
+                    TextColor="#7B3AC2"
+                    HorizontalOptions="Center"/>
+                <BoxView 
+                    BackgroundColor="#957BB0" 
+                    HeightRequest="4" 
+                    HorizontalOptions="Fill"/>
+                <Label
+                    x:Name="GasLatitude"
+                    FontFamily= "Century Gothic"
+                    FontSize="20"
+                    TextColor="#3730ED"
+                    HorizontalOptions="Center"/>
+                <Label
+                    x:Name="GasLongitude"
+                    FontFamily= "Century Gothic"
+                    FontSize="20"
+                    TextColor="#4AAEFF"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:converters="clr-namespace:parcial2Examen.Services.Converters"
+             mc:Ignorable="d"
+             x:Class="parcial2Examen.Views.Details"
+             Title= "Adding Gasoline Station">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter  x:Key="ImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}" />
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" />
+        <ToolbarItem Text="Map" Command="{Binding MapCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+            Margin="20"
+            VerticalOptions="StartAndExpand">
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#EA567B"
+                    Text="Gas Company" />
+                <Entry
+                Text="{Binding GasSelected.Name}" 
+                    Margin="20, 0, 400, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#4F00BD"
+                    Text="Establishment" />
+                <Entry
+                Text="{Binding GasSelected.Establishment}" 
+                    Margin="20, 0, 300, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#4105C6"
+                    Text="Green Gas Price" />
+                <Entry
+                    Placeholder="0.00"
+                Text="{Binding GasSelected.GreenGasP}" 
+                    Margin="20, 0, 500, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#4105C6"
+                    Text="Red Gas Price" />
+                <Entry
+                    Placeholder="0.00"
+                Text="{Binding GasSelected.RedGasP}" 
+                    Margin="20, 0, 500, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#0905C6"
+                Text="Diesel Price" />
+                <Entry
+                    Placeholder="0.00"
+                Text="{Binding GasSelected.DieselP}" 
+                    Margin="20, 0, 500, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#072CCB"
+                Text="Latitude" />
+                <Entry
+                Text="{Binding GasSelected.Latitude}" 
+                    Margin="20, 0, 400, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#0959D0"
+                Text="Longitude" />
+                <Entry
+                Text="{Binding GasSelected.Longitude}" 
+                    Margin="20, 0, 400, 0"/>
+                <Label
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    FontFamily="Century Gothic"
+                    TextColor="#5192BB"
+                    Text="Image" 
+                    Margin="0, 0, 20, 0"/>
+                <Image 
+                Source="{Binding ImageBase64, Converter={StaticResource ImageConverter}}" 
+                WidthRequest="200" />
+                <Button
+                    Text="Browse Images"
+                    BorderColor="#190036"
+                    BackgroundColor= "#55AEEA"
+                    BorderWidth="2"
+                    Command="{Binding SelectPictureCommand}" 
+                    Margin="500, 50, 500, 20"/>
+                <Button
+                    Text="Cancel"
+                    BorderWidth="2"
+                    BorderColor="#190036"
+                    BackgroundColor= "#7C57F3"
+                    Command="{Binding CancelCommand}"
+                    Margin="450, 0, 450, 20"/>
+
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
